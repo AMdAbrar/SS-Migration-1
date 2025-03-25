@@ -1,79 +1,260 @@
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background-color: #9fcddd;
-}
-
-a{
-  font-weight: lighter;
-  font-family: sans-serif;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 
-.dropdown-menu.show {
-  display: block;
-}
-
-ul:hover{
-  background-color:#9fcddd;
-}
-
-
-/* For the dropdown-submenu items */
-.dropdown-submenu {
-  position: relative;
- 
-}
-
-.dropdown-submenu .dropdown-menu {
-  display: none; /* Hide submenu by default */
-  position: absolute;
-  left: 100%; /* Position it to the right of the parent item */
-  top: 0;
-}
-
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block; /* Show submenu when hovering over the parent item */
-}
-
-
-/* Show the main dropdown menu when hovered */
-.dropdown:hover > .dropdown-menu {
-  display: block;
-  
-}
-
-/* Ensure nested submenus display correctly */
-
-.dropdown-container {
+.header {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping of elements onto the next line */
-  gap: 20px; /* Adds space between the blocks */
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
-/* Style for each dropdown block to take up half the width of the container */
-.dropdown-container .dropdown {
-  flex: 1 1 calc(50% - 20px); /* Takes up 50% of the container, accounting for gap */
-  box-sizing: border-box; /* Ensures padding and border do not affect width */
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
 }
 
-/* Style for the second block below the dropdown */
-.dropdown-container .collapse-container {
-  flex: 1 1 100%; /* Ensures the div below takes full width */
-  box-sizing: border-box;
-  margin-top: 20px; /* Adds space between dropdowns and the second block */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Optional: Style for collapse functionality */
-.collapse-container .card {
-  padding: 20px;
-  background-color: #00A3E0;
-  border: 1px solid #ddd;
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover:not(:disabled) {
+    background-color: #f7fafc;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
-.dropdown-menu.show {
-  display: block;              /* Show dropdown when toggled */
-  
+.page-indicator {
+  font-size: 0.875rem;
+  color: #64748b;
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.card-header {
+  padding: 1rem;
+  background-color: rgba(59, 130, 246, 0.05);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+
+.image-container {
+  position: relative;
+  height: 12rem;
+  width: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f7fafc;
+  }
+}
+
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tabs-header {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s;
+
+  &.active {
+    color: #3b82f6;
+    font-weight: 500;
+    border-bottom: 2px solid #3b82f6;
+  }
+
+  &:hover:not(.active) {
+    background-color: #f7fafc;
+  }
+}
+
+
+.tab-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link-item {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f7fafc;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.875rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.card-footer {
+  padding: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+}
+
+.close-button {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  background-color: transparent;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f7fafc;
+  }
+}
+
+
+[class^="icon-"] {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-globe::before {
+  content: "🌐";
+}
+
+.icon-drive::before {
+  content: "📁";
+}
+
+.icon-chevron-left::before {
+  content: "←";
+}
+
+.icon-chevron-right::before {
+  content: "→";
+}
+

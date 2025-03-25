@@ -8,10 +8,11 @@ import { AppComponent1 } from './Component/app1/app.component';
 import { WelcomepageComponent } from './Component/welcomepage/welcomepage.component';
 import { PageComponent } from './Component/page/page.component';
 import { SecuredFileShareComponent } from './Forms/secured-file-share/secured-file-share.component';
+import { NewsComponent } from './Component/news/news.component';
 
 
 const routes: Routes = [
-  {path:'',redirectTo:'page',pathMatch:'full'},
+{path:'',redirectTo:'page',pathMatch:'full'},
  { path:'internet', component:HomeComponent},
  {path:'Login',component:LoginComponent},
  {path:'Form',component:DynamicFormComponentComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
  {path:'App1',component:AppComponent1},
  {path:'welcome',component:WelcomepageComponent},
  {path:'page',component:PageComponent},
- {path:'sharefs',component:SecuredFileShareComponent}
+ {path:'sharefs',component:SecuredFileShareComponent},
+ {path:'news',component:NewsComponent}
 ];
 
 @NgModule({

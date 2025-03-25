@@ -1,0 +1,41 @@
+<div class="news-container rounded-lg shadow-lg">
+    <!-- Header -->
+    <div class="news-header">
+      <h2 class="news-title">Latest News</h2>
+      <a href="/news" class="view-all">View All</a>
+    </div>
+  
+    <!-- Featured News Section -->
+    <div class="featured-news">
+        <div *ngFor="let item of featuredNews" class="featured-item">
+          <a [href]="item.link" class="featured-link" target="_blank" rel="noopener noreferrer">
+            <div class="featured-image-container">
+              <img [src]="item.imageUrl" [alt]="item.title" class="featured-image">
+              <div class="category-badge">{{ item.category }}</div>
+            </div>
+            <div class="featured-content">
+              <h3 class="featured-title">{{ item.title }}</h3>
+              <p class="featured-summary">{{ item.summary }}</p>
+              <div class="featured-date">{{ formatDate(item.date) }}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+  
+    <!-- Regular News Grid -->
+    <div class="news-grid">
+      <div *ngFor="let item of regularNews" class="news-item">
+        <a [href]="item.link" class="news-link">
+          <div class="news-image-container">
+            <img [src]="item.imageUrl" [alt]="item.title" class="news-image">
+          </div>
+          <div class="news-content">
+            <div class="news-category">{{ item.category }}</div>
+            <h4 class="news-item-title">{{ item.title }}</h4>
+            <div class="news-date">{{ formatDate(item.date) }}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>             
+
