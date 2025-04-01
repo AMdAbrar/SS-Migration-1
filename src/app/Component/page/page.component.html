@@ -24,81 +24,81 @@
     </div>
 </section> -->
 
-<section class="about-section" style="background-color:rgb(255, 252, 252) ;">
+<section class="about-section" style="background-color:rgb(255, 252, 252) ; height: 380px;">
   <div class="content-text">
     <p class="text-lg font-semibold text-gray-600 mb-4 "> AT CONSERO GLOBAL</p>
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-gray-900" style="padding-left: 150px">
-        Changing Finance, One Company at a Time
+      Changing Finance, One Company at a Time
     </h1>
-</div>
-    <div class="content-container">
-      <div class="news-container rounded-lg shadow-lg">
-        <!-- Header -->
-        <div class="news-header">
-          <h2 class="news-title">Latest News</h2>
-          <a href="/news" class="view-all">View All</a>
-        </div>
-      
-        <!-- Featured News Section -->
-        <div class="featured-news">
-          <div *ngFor="let item of featuredNews" class="featured-item">
-            <a [routerLink]="[item.link]" class="featured-link">
-              <div class="featured-image-container">
-                <img [src]="item.imageUrl" [alt]="item.title" class="featured-image">
-                <div class="category-badge">{{ item.category }}</div>
-              </div>
-              <div class="featured-content">
-                <h3 class="featured-title">{{ item.title }}</h3>
-                <p class="featured-summary">{{ item.summary }}</p>
-                <div class="featured-date">{{ formatDate(item.date) }}</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      
-        <!-- Regular News Grid -->
-        <div class="news-grid">
-          <div *ngFor="let item of regularNews" class="news-item">
-            <a [routerLink]="[item.link]" class="news-link">
-              <div class="news-image-container">
-                <img [src]="item.imageUrl" [alt]="item.title" class="news-image">
-              </div>
-              <div class="news-content">
-                <div class="news-category">{{ item.category }}</div>
-                <h4 class="news-item-title">{{ item.title }}</h4>
-                <div class="news-date">{{ formatDate(item.date) }}</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>             
-    </div>
-  </section>
+  </div>
+  <div class="content-container">
+    <div class="news-container rounded-lg shadow-lg">
+      <!-- Header -->
+      <div class="news-header">
+        <h2 class="news-title">Latest News</h2>
+        <a href="/news" class="view-all">View All</a>
+      </div>
 
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h2 class="footer-title">Consero</h2>
-          <h6>Financial Clarity and  efficiency made easy</h6><br>
-        </div>
-        
-        <div class="footer-locations">
-          <div *ngFor="let location of locations" class="location">
-            <h3 class="location-title">{{location.city}}</h3>
-            <div class="location-details">
-              <a [href]="'mailto:' + location.email" class="location-email">{{location.email}}</a>
-              <p class="location-phone">{{location.phone}}</p>
-              <div class="location-address">
-                <p *ngFor="let line of location.address">{{line}}</p>
-              </div>
-              <a [href]="location.mapLink" class="map-link">SEE ON MAP →</a>
+      <!-- Featured News Section -->
+      <div class="featured-news">
+        <div *ngFor="let item of featuredNews" class="featured-item">
+          <a [routerLink]="[item.link]" class="featured-link">
+            <div class="featured-image-container">
+              <img [src]="item.imageUrl" [alt]="item.title" class="featured-image">
+              <div class="category-badge">{{ item.category }}</div>
             </div>
+            <div class="featured-content">
+              <h3 class="featured-title">{{ item.title }}</h3>
+              <p class="featured-summary">{{ item.summary }}</p>
+              <div class="featured-date">{{ formatDate(item.date) }}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Regular News Grid -->
+      <div class="news-grid">
+        <div *ngFor="let item of regularNews" class="news-item">
+          <a [routerLink]="[item.link]" class="news-link">
+            <div class="news-image-container">
+              <img [src]="item.imageUrl" [alt]="item.title" class="news-image">
+            </div>
+            <div class="news-content">
+              <div class="news-category">{{ item.category }}</div>
+              <h4 class="news-item-title">{{ item.title }}</h4>
+              <div class="news-date">{{ formatDate(item.date) }}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer" style="height: 230px;">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2 class="footer-title">Consero</h2>
+        <h6>Financial Clarity and efficiency made easy</h6><br>
+      </div>
+
+      <div class="footer-locations">
+        <div *ngFor="let location of locations" class="location">
+          <h3 class="location-title">{{location.city}}</h3>
+          <div class="location-details">
+            <a [href]="'mailto:' + location.email" class="location-email">{{location.email}}</a>
+            <p class="location-phone">{{location.phone}}</p>
+            <div class="location-address">
+              <p *ngFor="let line of location.address">{{line}}</p>
+            </div>
+            <a [href]="location.mapLink" class="map-link">SEE ON MAP →</a>
           </div>
         </div>
-        
-        <!-- <div class="footer-newsletter">
+      </div>
+
+      <!-- <div class="footer-newsletter">
           <h3 class="newsletter-title">WANT TO BE THE SMARTEST<br>IN YOUR OFFICE?</h3>
           <a href="#" class="newsletter-link">SIGN UP FOR OUR NEWSLETTER →</a>
 
@@ -111,6 +111,6 @@
             </div>
           </div>
         </div> -->
-      </div>
     </div>
-  </footer>
+  </div>
+</footer>

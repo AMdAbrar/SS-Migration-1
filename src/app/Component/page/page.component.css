@@ -198,7 +198,7 @@ Base styles
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 1.5rem;
+  padding: 0.3rem 0.3rem;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -224,8 +224,8 @@ Base styles
 .featured-news {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 1rem;
+  padding: 1rem;
   border-bottom: 1px solid #e5e7eb;
 
   @media (min-width: 768px) {
@@ -431,7 +431,7 @@ Base styles
   flex: 1; /* Makes this flexible as well */
   max-width: 50%; /* Limits the width of the news container to 50% */
   padding: 20px; /* Adds padding around the content */
-  height: 500px;
+  height: 390px;
 }
 
 /* Optional: Add responsiveness for smaller screens */

@@ -19,6 +19,8 @@ import { PageComponent } from './Component/page/page.component';
 import { SecuredFileShareComponent } from './Forms/secured-file-share/secured-file-share.component';
 import { InternetGdriveComponent } from './Component/internet-gdrive/internet-gdrive.component';
 import { NewsComponent } from './Component/news/news.component';
+import { UsefullLinksComponent } from './Component/usefull-links/usefull-links.component';
+import { AppsComponent } from './Component/apps/apps.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { NewsComponent } from './Component/news/news.component';
     SecuredFileShareComponent,
     InternetGdriveComponent,
     NewsComponent,
+    UsefullLinksComponent,
+    AppsComponent,
   ],
   imports: [
     BrowserModule,

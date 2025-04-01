@@ -9,6 +9,13 @@ import { Subscription } from 'rxjs';
 })
 export class WelcomepageComponent  implements OnInit, OnDestroy {
   isLoggedIn = false;
+  isDropdownVisible: boolean = false;
+  showUsefulLinks: boolean = false;
+  showApps: boolean = false;
+  showAboutUs: boolean = false;
+  isHomeActive = false;
+
+
   private authStatusSub: Subscription | undefined;
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -22,6 +29,44 @@ export class WelcomepageComponent  implements OnInit, OnDestroy {
     // Initialize login state when the page loads
     this.isLoggedIn = this.authService.getIsLoggedIn();
   }
+
+  toggleUsefulLinks() {
+    if (this.showUsefulLinks) {
+        this.closeAll();
+    } else {
+        this.closeAll();
+        this.showUsefulLinks = true;
+    }
+}
+
+toggleApps() {
+    if (this.showApps) {
+        this.closeAll();
+    } else {
+        this.closeAll();
+        this.showApps = true;
+    }
+}
+
+toggleAboutUs() {
+    if (this.showAboutUs) {
+        this.closeAll();
+    } else {
+        this.closeAll();
+        this.showAboutUs = true;
+    }
+}
+
+closeAll() {
+    this.showUsefulLinks = false;
+    this.showApps = false;
+    this.showAboutUs = false;
+    this.isHomeActive = false;
+
+}
+
+
+
   preventLogout(): void {
     this.isLoggedIn = this.authService.getIsLoggedIn(); // Ensure state is not lost
   }
@@ -41,10 +86,21 @@ export class WelcomepageComponent  implements OnInit, OnDestroy {
       this.router.navigate(['/Login']);
     }
   }
-  isDropdownVisible: boolean = false;
 
   // Toggle dropdown visibility
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
+
+  
+  toggleHome() {
+    if (this.isHomeActive) {
+        this.closeAll();
+    } else {
+        this.closeAll();
+        this.isHomeActive = true;
+        this.router.navigate(['/page']);
+    }
+}
+
 }

@@ -9,6 +9,8 @@ import { WelcomepageComponent } from './Component/welcomepage/welcomepage.compon
 import { PageComponent } from './Component/page/page.component';
 import { SecuredFileShareComponent } from './Forms/secured-file-share/secured-file-share.component';
 import { NewsComponent } from './Component/news/news.component';
+import { UsefullLinksComponent } from './Component/usefull-links/usefull-links.component';
+import { AppsComponent } from './Component/apps/apps.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,11 @@ const routes: Routes = [
  {path:'welcome',component:WelcomepageComponent},
  {path:'page',component:PageComponent},
  {path:'sharefs',component:SecuredFileShareComponent},
- {path:'news',component:NewsComponent}
+ {path:'news',component:NewsComponent},
+ {path:'usefull-links',component:UsefullLinksComponent},
+ {path:'apps',component:AppsComponent},
+
+
 ];
 
 @NgModule({
